@@ -1,6 +1,7 @@
 import { app, BrowserWindow, shell } from 'electron'
 import { autoUpdater } from 'electron-updater'
 import electronLog from 'electron-log'
+import path from 'path'
 
 import { setApplicationMenu } from './menu'
 
@@ -22,6 +23,8 @@ function createWindow () {
       nodeIntegration: false
     }
   })
+
+  mainWindow.loadURL(path.join('file://', __dirname, 'index.html'))
 
   // Open the DevTools.
   if (process.env.NODE_ENV === 'development') {
