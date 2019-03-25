@@ -38,9 +38,14 @@
     "appId": "ffmpeg-wizard.tylingsoft.com",
     "productName": "FFmpeg Wizard",
     "files": [
-      "dist/main.js",
-      "dist/main.js.map",
-      "!node_modules${/*}"
+      {
+        "filter": [
+          "dist/*.js",
+          "dist/*.map",
+          "dist/*.html",
+          "!node_modules"
+        ]
+      }
     ],
     "mac": {
       "category": "public.app-category.video"
